@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2015, Paul R. Swan
+// Copyright (c) 2021, Warren Ondras
 // All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without modification,
@@ -22,21 +22,46 @@
 // TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
 // EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
-#include <LiquidCrystal.h>
-#include <DFR_Key.h>
-#include <zutil.h>
+#ifndef CDragonsLairBaseGame_h
+#define CDragonsLairBaseGame_h
 
-#include <main.h>
+#include "CGame.h"
 
-//#include <Z80GameSelector.h>
-#include <Z80GameSelectorLaserdisc.h>
-
-void setup()
+class CDragonsLairBaseGame : public CGame
 {
-  mainSetup(s_gameSelector);
-}
+    public:
+        
+        //
+        // CDragonsLairBaseGame
+        //
+        
+        virtual PERROR interruptCheck(
+                                      );
+        
+        //
+        // Custom function to clear the video display to blank.
+        //
+        static PERROR clearVideo(
+                                 void *context
+                                 );
+        
+        //
+        // Custom function for testing the shell/missile hardware.
+        //
+        static PERROR shellMissileTest(
+                                       void *context
+                                       );
+        
+    protected:
+        
+        CDragonsLairBaseGame(
+                             const ROM_REGION *romRegion
+                             );
+        
+        ~CDragonsLairBaseGame(
+                              );
+        
+};
 
-void loop()
-{
-  mainLoop();
-}
+#endif
+

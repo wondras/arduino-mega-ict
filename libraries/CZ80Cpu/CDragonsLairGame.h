@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2015, Paul R. Swan
+// Copyright (c) 2021, Warren Ondras
 // All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without modification,
@@ -22,21 +22,43 @@
 // TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
 // EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
-#include <LiquidCrystal.h>
-#include <DFR_Key.h>
-#include <zutil.h>
+#ifndef CDragonsLairGame_h
+#define CDragonsLairGame_h
 
-#include <main.h>
+#include "CDragonsLairBaseGame.h"
 
-//#include <Z80GameSelector.h>
-#include <Z80GameSelectorLaserdisc.h>
-
-void setup()
+class CDragonsLairGame : public CDragonsLairBaseGame
 {
-  mainSetup(s_gameSelector);
-}
+    public:
+        
+        //
+        // Constructors for this game.
+        //
+        
+        static IGame* createInstanceSetF(
+                                         );
+        
+        static IGame* createInstanceSetF2(
+                                          );
+        
+        static IGame* createInstanceSetDLE21(
+                                             );
+        
+        //
+        // IGame Interface - wholly implemented in the Base game.
+        //
+        
+    private:
+        
+        //
+        // Different ROM sets supplied.
+        //
+        CDragonsLairGame(
+                         const ROM_REGION *romRegion
+                         );
+        
+};
 
-void loop()
-{
-  mainLoop();
-}
+#endif
+
+

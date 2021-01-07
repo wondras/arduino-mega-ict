@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2015, Paul R. Swan
+// Copyright (c) 2016, Paul R. Swan
 // All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without modification,
@@ -22,21 +22,20 @@
 // TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
 // EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
-#include <LiquidCrystal.h>
-#include <DFR_Key.h>
-#include <zutil.h>
+#include <CZ80GenericGame.h>
+#include <CDragonsLairGame.h>
+#include <CSpaceAceGame.h>
 
-#include <main.h>
-
-//#include <Z80GameSelector.h>
-#include <Z80GameSelectorLaserdisc.h>
-
-void setup()
-{
-  mainSetup(s_gameSelector);
-}
-
-void loop()
-{
-  mainLoop();
-}
+//
+// The initial selector to select the game to test.
+//
+static const SELECTOR s_gameSelector[] PROGMEM = {//0123456789abcde
+    {"DrgnsLair F    ",  onSelectGame,    (void*) (CDragonsLairGame::createInstanceSetF),     false},
+    {"DrgnsLair F2   ",  onSelectGame,    (void*) (CDragonsLairGame::createInstanceSetF2),    false},
+    {"DrgnsLair DLE2 ",  onSelectGame,    (void*) (CDragonsLairGame::createInstanceSetDLE21), false},
+    {"Space Ace A3   ",  onSelectGame,    (void*) (CSpaceAceGame::createInstanceSetA3),       false},
+    {"Space Ace SAE10",  onSelectGame,    (void*) (CSpaceAceGame::createInstanceSetSAE10),    false},
+    {"Generic 2716   ",  onSelectGeneric, (void*) (CZ80GenericGame::createInstance2716),      false},
+    {"Generic 2732   ",  onSelectGeneric, (void*) (CZ80GenericGame::createInstance2732),      false},
+    { 0, 0 } // end of list
+};
