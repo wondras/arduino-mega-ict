@@ -22,20 +22,27 @@
 // TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
 // EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
-#include <CZ80GenericGame.h>
 #include <CDragonsLairGame.h>
 #include <CSpaceAceGame.h>
+
+#include <CGyrussSoundGame.h>
 
 //
 // The initial selector to select the game to test.
 //
-static const SELECTOR s_gameSelector[] PROGMEM = {//0123456789abcde
+static const SELECTOR s_gameSelector[] PROGMEM = {
+    //0123456789abcde
+    {"DrgnsLair A    ",  onSelectGame,    (void*) (CDragonsLairGame::createInstanceSetA),     false},
+    {"DrgnsLair B    ",  onSelectGame,    (void*) (CDragonsLairGame::createInstanceSetB),     false},
+    {"DrgnsLair C    ",  onSelectGame,    (void*) (CDragonsLairGame::createInstanceSetC),     false},
+    {"DrgnsLair D    ",  onSelectGame,    (void*) (CDragonsLairGame::createInstanceSetD),     false},
+    {"DrgnsLair E    ",  onSelectGame,    (void*) (CDragonsLairGame::createInstanceSetE),     false},
     {"DrgnsLair F    ",  onSelectGame,    (void*) (CDragonsLairGame::createInstanceSetF),     false},
     {"DrgnsLair F2   ",  onSelectGame,    (void*) (CDragonsLairGame::createInstanceSetF2),    false},
-    {"DrgnsLair DLE2 ",  onSelectGame,    (void*) (CDragonsLairGame::createInstanceSetDLE21), false},
+    {"DrgnsLair DLE21",  onSelectGame,    (void*) (CDragonsLairGame::createInstanceSetDLE21), false},
+    {"Space Ace A    ",  onSelectGame,    (void*) (CSpaceAceGame::createInstanceSetA),        false},
+    {"Space Ace A2   ",  onSelectGame,    (void*) (CSpaceAceGame::createInstanceSetA2),       false},
     {"Space Ace A3   ",  onSelectGame,    (void*) (CSpaceAceGame::createInstanceSetA3),       false},
     {"Space Ace SAE10",  onSelectGame,    (void*) (CSpaceAceGame::createInstanceSetSAE10),    false},
-    {"Generic 2716   ",  onSelectGeneric, (void*) (CZ80GenericGame::createInstance2716),      false},
-    {"Generic 2732   ",  onSelectGeneric, (void*) (CZ80GenericGame::createInstance2732),      false},
     { 0, 0 } // end of list
 };

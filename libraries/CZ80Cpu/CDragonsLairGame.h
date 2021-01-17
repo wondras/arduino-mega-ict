@@ -29,34 +29,49 @@
 
 class CDragonsLairGame : public CDragonsLairBaseGame
 {
-    public:
-        
-        //
-        // Constructors for this game.
-        //
-        
-        static IGame* createInstanceSetF(
+public:
+    
+    //
+    // Constructors for this game.
+    //
+    
+    static IGame* createInstanceSetA(
+                                     );
+    
+    static IGame* createInstanceSetB(
+                                     );
+    
+    static IGame* createInstanceSetC(
+                                     );
+    
+    static IGame* createInstanceSetD(
+                                     );
+    
+    static IGame* createInstanceSetE(
+                                     );
+    
+    static IGame* createInstanceSetF(
+                                     );
+    
+    static IGame* createInstanceSetF2(
+                                      );
+    
+    static IGame* createInstanceSetDLE21(
                                          );
-        
-        static IGame* createInstanceSetF2(
-                                          );
-        
-        static IGame* createInstanceSetDLE21(
-                                             );
-        
-        //
-        // IGame Interface - wholly implemented in the Base game.
-        //
-        
-    private:
-        
-        //
-        // Different ROM sets supplied.
-        //
-        CDragonsLairGame(
-                         const ROM_REGION *romRegion
-                         );
-        
+    
+    //
+    // IGame Interface - wholly implemented in the Base game.
+    //
+    
+private:
+    
+    //
+    // Different ROM sets supplied.
+    //
+    CDragonsLairGame(
+                     const ROM_REGION *romRegion
+                     );
+    
 };
 
 #endif

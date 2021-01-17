@@ -35,6 +35,12 @@ class CSpaceAceGame : public CDragonsLairBaseGame
         // Constructors for this game.
         //
         
+        static IGame* createInstanceSetA(
+                                         );
+        
+        static IGame* createInstanceSetA2(
+                                          );
+        
         static IGame* createInstanceSetA3(
                                           );
         

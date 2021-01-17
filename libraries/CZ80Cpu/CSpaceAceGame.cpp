@@ -30,7 +30,49 @@
 
 
 //
-// ROMs for Space Ace version A3 (spaceace from MAME)
+// ROMs for version A (spaceacea in MAME)
+//
+static const ROM_DATA2N s_romData2nSetA[] PROGMEM  = {
+    // 01   02   04   08   10   20   40   80  100  200  400  800 1000
+    {0x3f,0xe0,0xcc,0xff,0xff,0xff,0xff,0xff,0x21,0x01,0x3e,0xff,0xff}, // sa_a_u1.bin - 0x8eb1889e
+    {0xc1,0xe6,0xcb,0x01,0xcd,0x0f,0x4b,0xe6,0x8d,0xe0,0x01,0x13,0x1d}, // sa_a_u2.bin - 0x18d0262d
+    {0x00,0x13,0x01,0x84,0x00,0x00,0x1a,0x01,0x1a,0x1c,0x45,0xff,0x01}, // sa_a_u3.bin - 0x4646832d
+    {0x1b,0x2f,0x12,0x24,0x01,0x15,0x99,0x1c,0x16,0xff,0x13,0x82,0xff}, // sa_a_u4.bin - 0x57db2a79
+    {0x63,0x10,0x24,0x63,0x20,0x80,0x84,0x01,0x12,0x49,0xff,0x32,0x1d}, // sa_a_u5.bin - 0x85cbcdc4
+    {0}  // end of list
+};
+static const ROM_REGION s_romRegion_SetA[] PROGMEM = {
+    {NO_BANK_SWITCH, 0x0000, 0x2000, s_romData2nSetA[0].data2n, 0x8eb1889e, "rU1"}, // sa_a_u1.bin
+    {NO_BANK_SWITCH, 0x2000, 0x2000, s_romData2nSetA[1].data2n, 0x18d0262d, "rU2"}, // sa_a_u2.bin
+    {NO_BANK_SWITCH, 0x4000, 0x2000, s_romData2nSetA[2].data2n, 0x4646832d, "rU3"}, // sa_a_u3.bin
+    {NO_BANK_SWITCH, 0x6000, 0x2000, s_romData2nSetA[3].data2n, 0x57db2a79, "rU4"}, // sa_a_u4.bin
+    {NO_BANK_SWITCH, 0x8000, 0x2000, s_romData2nSetA[4].data2n, 0x85cbcdc4, "rU5"}, // sa_a_u5.bin
+    {0}  // end of list
+};
+
+//
+// ROMs for version A2 (spaceacea2 in MAME)
+//
+static const ROM_DATA2N s_romData2nSetA2[] PROGMEM  = {
+    // 01   02   04   08   10   20   40   80  100  200  400  800 1000
+    {0x3f,0xe0,0xcc,0xff,0xff,0xff,0xff,0xff,0x21,0x01,0x3e,0xff,0xff}, // sa_a2_u1.bin - 0x71b39e27
+    {0xc1,0xe6,0xcb,0x01,0xcd,0x0f,0x4b,0xe6,0x8d,0xe0,0x01,0x13,0x1d}, // sa_a2_u2.bin - 0x18d0262d
+    {0x00,0x13,0x01,0x84,0x00,0x00,0x1a,0x01,0x1a,0x1c,0x45,0xff,0x01}, // sa_a2_u3.bin - 0x4646832d
+    {0x1b,0x2f,0x12,0x24,0x01,0x15,0x99,0x1c,0x16,0xff,0x13,0x82,0xff}, // sa_a2_u4.bin - 0x57db2a79
+    {0x63,0x10,0x24,0x63,0x20,0x80,0x84,0x01,0x12,0x49,0xff,0x32,0x1d}, // sa_a2_u5.bin - 0x85cbcdc4
+    {0}  // end of list
+};
+static const ROM_REGION s_romRegion_SetA2[] PROGMEM = {
+    {NO_BANK_SWITCH, 0x0000, 0x2000, s_romData2nSetA2[0].data2n, 0x71b39e27, "rU1"}, // sa_a2_u1.bin
+    {NO_BANK_SWITCH, 0x2000, 0x2000, s_romData2nSetA2[1].data2n, 0x18d0262d, "rU2"}, // sa_a2_u2.bin
+    {NO_BANK_SWITCH, 0x4000, 0x2000, s_romData2nSetA2[2].data2n, 0x4646832d, "rU3"}, // sa_a2_u3.bin
+    {NO_BANK_SWITCH, 0x6000, 0x2000, s_romData2nSetA2[3].data2n, 0x57db2a79, "rU4"}, // sa_a2_u4.bin
+    {NO_BANK_SWITCH, 0x8000, 0x2000, s_romData2nSetA2[4].data2n, 0x85cbcdc4, "rU5"}, // sa_a2_u5.bin
+    {0}  // end of list
+};
+
+//
+// ROMs for version A3 (spaceace in MAME)
 //
 static const ROM_DATA2N s_romData2nSetA3[] PROGMEM  = {
     // program ROMs
@@ -42,7 +84,6 @@ static const ROM_DATA2N s_romData2nSetA3[] PROGMEM  = {
     {0x63,0x10,0x24,0x63,0x20,0x80,0x84,0x01,0x12,0x49,0xff,0x32,0x1d}, // sa_a3_u5.bin - 0x85cbcdc4
     {0}  // end of list
 };
-
 static const ROM_REGION s_romRegion_SetA3[] PROGMEM = {
     {NO_BANK_SWITCH, 0x0000, 0x2000, s_romData2nSetA3[0].data2n, 0x427522d0, "rU1"}, // sa_a3_u1.bin
     {NO_BANK_SWITCH, 0x2000, 0x2000, s_romData2nSetA3[1].data2n, 0x18d0262d, "rU2"}, // sa_a3_u2.bin
@@ -52,9 +93,9 @@ static const ROM_REGION s_romRegion_SetA3[] PROGMEM = {
     {0} // end of list
 };
 
-
 //
-// ROMs for Space Ace Enahancement version 1.0 (not in MAME)
+// ROMs for Space Ace Enahancement version 1.0 (unofficial mod, not in MAME)
+// http://www.dragons-lair-project.com/tech/enhancements/sae.asp
 //
 static const ROM_DATA2N s_romData2nSetSAE10[] PROGMEM  = {
     // program ROMs
@@ -66,7 +107,6 @@ static const ROM_DATA2N s_romData2nSetSAE10[] PROGMEM  = {
     {0x70,0x61,0x65,0x65,0x6e,0x2d,0x62,0x74,0x20,0x2e,0x11,0x17,0xff}, // SAE10_U5.bin - 0x8a536cb0
     {0}  // end of list
 };
-
 static const ROM_REGION s_romRegion_SetSAE10[] PROGMEM = {
     {NO_BANK_SWITCH, 0x0000, 0x2000, s_romData2nSetSAE10[0].data2n, 0xcbc5e425, "rU1"}, // SAE10_U1.bin
     {NO_BANK_SWITCH, 0x2000, 0x2000, s_romData2nSetSAE10[1].data2n, 0x71a26f47, "rU2"}, // SAE10_U2.bin
@@ -76,6 +116,21 @@ static const ROM_REGION s_romRegion_SetSAE10[] PROGMEM = {
     {0} // end of list
 };
 
+
+
+IGame*
+CSpaceAceGame::createInstanceSetA(
+                                   )
+{
+    return (new CSpaceAceGame(s_romRegion_SetA));
+}
+
+IGame*
+CSpaceAceGame::createInstanceSetA2(
+                                   )
+{
+    return (new CSpaceAceGame(s_romRegion_SetA2));
+}
 
 IGame*
 CSpaceAceGame::createInstanceSetA3(
