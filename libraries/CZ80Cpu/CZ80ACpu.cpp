@@ -667,13 +667,13 @@ CZ80ACpu::memoryWrite(
     // Select the address space based on the supplied address
     if (IS_IO_SPACE(address))
     {
-        error = IORQwrite(data);
+        error = IORQwrite(&data);
     }
     else
     {
         if (m_cycleType == CYCLE_TYPE_PUCKMAN)
         {
-            error = MREQwritePuckman(data);
+            error = MREQwritePuckman(&data);
         }
         else if (m_cycleType == CYCLE_TYPE_CRAZYKONG)
         {
@@ -687,7 +687,7 @@ CZ80ACpu::memoryWrite(
         }
         else
         {
-            error = MREQwrite(data);
+            error = MREQwrite(&data);
         }
     }
 
