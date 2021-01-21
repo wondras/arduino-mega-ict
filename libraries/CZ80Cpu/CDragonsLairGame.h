@@ -69,6 +69,7 @@ private:
     // Different ROM sets supplied.
     //
     CDragonsLairGame(
+                     const ROM_DATA2N *romData2n,
                      const ROM_REGION *romRegion
                      );
     

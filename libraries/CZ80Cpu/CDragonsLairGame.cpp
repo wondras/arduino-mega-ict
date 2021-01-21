@@ -192,62 +192,63 @@ IGame*
 CDragonsLairGame::createInstanceSetA(
                                      )
 {
-    return (new CDragonsLairGame(s_romRegion_SetA));
+    return (new CDragonsLairGame(s_romData2nSetA, s_romRegion_SetA));
 }
 
 IGame*
 CDragonsLairGame::createInstanceSetB(
                                      )
 {
-    return (new CDragonsLairGame(s_romRegion_SetB));
+    return (new CDragonsLairGame(s_romData2nSetB, s_romRegion_SetB));
 }
 
 IGame*
 CDragonsLairGame::createInstanceSetC(
                                      )
 {
-    return (new CDragonsLairGame(s_romRegion_SetC));
+    return (new CDragonsLairGame(s_romData2nSetC, s_romRegion_SetC));
 }
 
 IGame*
 CDragonsLairGame::createInstanceSetD(
                                      )
 {
-    return (new CDragonsLairGame(s_romRegion_SetD));
+    return (new CDragonsLairGame(s_romData2nSetD, s_romRegion_SetD));
 }
 
 IGame*
 CDragonsLairGame::createInstanceSetE(
                                      )
 {
-    return (new CDragonsLairGame(s_romRegion_SetE));
+    return (new CDragonsLairGame(s_romData2nSetE, s_romRegion_SetE));
 }
 
 IGame*
 CDragonsLairGame::createInstanceSetF(
                                      )
 {
-    return (new CDragonsLairGame(s_romRegion_SetF));
+    return (new CDragonsLairGame(s_romData2nSetF, s_romRegion_SetF));
 }
 
 IGame*
 CDragonsLairGame::createInstanceSetF2(
                                       )
 {
-    return (new CDragonsLairGame(s_romRegion_SetF2));
+    return (new CDragonsLairGame(s_romData2nSetF2, s_romRegion_SetF2));
 }
 
 IGame*
 CDragonsLairGame::createInstanceSetDLE21(
                                          )
 {
-    return (new CDragonsLairGame(s_romRegion_SetDLE21));
+    return (new CDragonsLairGame(s_romData2nSetDLE21, s_romRegion_SetDLE21));
 }
 
 
 CDragonsLairGame::CDragonsLairGame(
+                                   const ROM_DATA2N *romData2n,
                                    const ROM_REGION *romRegion
-                                   ) : CDragonsLairBaseGame( romRegion )
+                                   ) : CDragonsLairBaseGame( romData2n, romRegion )
 {
 }
 

@@ -122,33 +122,34 @@ IGame*
 CSpaceAceGame::createInstanceSetA(
                                    )
 {
-    return (new CSpaceAceGame(s_romRegion_SetA));
+    return (new CSpaceAceGame(s_romData2nSetA, s_romRegion_SetA));
 }
 
 IGame*
 CSpaceAceGame::createInstanceSetA2(
                                    )
 {
-    return (new CSpaceAceGame(s_romRegion_SetA2));
+    return (new CSpaceAceGame(s_romData2nSetA2, s_romRegion_SetA2));
 }
 
 IGame*
 CSpaceAceGame::createInstanceSetA3(
                                    )
 {
-    return (new CSpaceAceGame(s_romRegion_SetA3));
+    return (new CSpaceAceGame(s_romData2nSetA3, s_romRegion_SetA3));
 }
 
 IGame*
 CSpaceAceGame::createInstanceSetSAE10(
                                       )
 {
-    return (new CSpaceAceGame(s_romRegion_SetSAE10));
+    return (new CSpaceAceGame(s_romData2nSetSAE10, s_romRegion_SetSAE10));
 }
 
 CSpaceAceGame::CSpaceAceGame(
+                             const ROM_DATA2N *romData2n,
                              const ROM_REGION *romRegion
-                             ) : CDragonsLairBaseGame( romRegion )
+                             ) : CDragonsLairBaseGame( romData2n, romRegion )
 {
 }
 
