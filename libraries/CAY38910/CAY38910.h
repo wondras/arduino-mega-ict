@@ -32,7 +32,7 @@
 // Implementation for testing the AY-3-8910 series of programmable sound
 // generator and IO peripheral ICs. The device is accessed using two
 // IO locations, one to set the register address to access and the other
-// to read or write data to it. (Some platforms use separate read/write locations.)
+// to read or write data to it.
 //
 class CAY38910
 {
@@ -64,7 +64,7 @@ class CAY38910
         CAY38910(
             ICpu   *cpu,
             UINT32 regAddress,
-            UINT32 regdDataRd,
+            UINT32 regDataRd,
             UINT32 regDataWr
         );
 
