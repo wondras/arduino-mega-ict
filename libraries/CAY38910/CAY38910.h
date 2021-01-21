@@ -55,19 +55,17 @@ class CAY38910
             IOB
         } Port;
 
-        // constructor for common data read/write address
         CAY38910(
             ICpu   *cpu,
             UINT32 regAddress,
             UINT32 regData
         );
 
-        // constructor for separate data read/write addresses (for Dragon's Lair)
         CAY38910(
             ICpu   *cpu,
             UINT32 regAddress,
-            UINT32 regdDataRead,
-            UINT32 regDataWrite
+            UINT32 regdDataRd,
+            UINT32 regDataWr
         );
 
         ~CAY38910(
@@ -104,8 +102,8 @@ class CAY38910
 
         ICpu    *m_cpu;
         UINT32  m_regAddress;
-        UINT32  m_regDataRead;
-        UINT32  m_regDataWrite;
+        UINT32  m_regDataRd;
+        UINT32  m_regDataWr;
 };
 
 #endif

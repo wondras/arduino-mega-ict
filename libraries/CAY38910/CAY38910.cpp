@@ -42,17 +42,6 @@ static const UINT8 AY_R15_COARSE_ENV_SHAPE  = 0xD;
 static const UINT8 AY_R16_PORT_A_DATA       = 0xE;
 static const UINT8 AY_R17_PORT_B_DATA       = 0xF;
 
-CAY38910::CAY38910(
-    ICpu   *cpu,
-    UINT32 regAddress,
-    UINT32 regDataRead,
-    UINT32 regDataWrite
-) : m_cpu(cpu),
-    m_regAddress(regAddress),
-    m_regDataRead(regDataRead),
-    m_regDataWrite(regDataWrite)
-{
-}
 
 CAY38910::CAY38910(
     ICpu   *cpu,
@@ -60,11 +49,23 @@ CAY38910::CAY38910(
     UINT32 regData
 ) : m_cpu(cpu),
     m_regAddress(regAddress),
-    m_regDataRead(regData),
-    m_regDataWrite(regData)
+    m_regDataRd(regData),
+    m_regDataWr(regData)
 {
 }
 
+
+CAY38910::CAY38910(
+    ICpu   *cpu,
+    UINT32 regAddress,
+    UINT32 regDataRd,
+    UINT32 regDataWr
+) : m_cpu(cpu),
+    m_regAddress(regAddress),
+    m_regDataRd(regDataRd),
+    m_regDataWr(regDataWr)
+{
+}
 
 CAY38910::~CAY38910(
 )
@@ -222,6 +223,7 @@ CAY38910::noise(
     return error;
 }
 
+
 PERROR
 CAY38910::readPort(
     Port port,
@@ -240,6 +242,7 @@ CAY38910::readPort(
     }
 }
 
+
 PERROR
 CAY38910::read(
     UINT8 reg,
@@ -253,7 +256,7 @@ CAY38910::read(
 
     if (SUCCESS(error))
     {
-        error = m_cpu->memoryRead(m_regDataRead, &data16);
+        error = m_cpu->memoryRead(m_regDataRd, &data16);
     }
 
     *data = (UINT8) data16;
@@ -274,10 +277,9 @@ CAY38910::write(
 
     if (SUCCESS(error))
     {
-        error = m_cpu->memoryWrite(m_regDataWrite, (UINT16) data);
+        error = m_cpu->memoryWrite(m_regDataWr, (UINT16) data);
     }
 
     return error;
 }
-
 
