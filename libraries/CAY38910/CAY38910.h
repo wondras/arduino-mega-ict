@@ -32,7 +32,7 @@
 // Implementation for testing the AY-3-8910 series of programmable sound
 // generator and IO peripheral ICs. The device is accessed using two
 // IO locations, one to set the register address to access and the other
-// to read or write data to it.
+// to read or write data to it. (Some platforms use separate read/write locations.)
 //
 class CAY38910
 {
@@ -55,17 +55,19 @@ class CAY38910
             IOB
         } Port;
 
+        // constructor for common data read/write address
         CAY38910(
             ICpu   *cpu,
             UINT32 regAddress,
             UINT32 regData
         );
 
+        // constructor for separate data read/write addresses (for Dragon's Lair)
         CAY38910(
             ICpu   *cpu,
             UINT32 regAddress,
-            UINT32 regDataRd,
-            UINT32 regDataWr
+            UINT32 regdDataRead,
+            UINT32 regDataWrite
         );
 
         ~CAY38910(
@@ -79,6 +81,11 @@ class CAY38910
 
         PERROR noise(
             Channel channel
+        );
+    
+        PERROR readPort(
+            Port port,
+            UINT8 *data
         );
 
     private:
@@ -97,8 +104,8 @@ class CAY38910
 
         ICpu    *m_cpu;
         UINT32  m_regAddress;
-        UINT32  m_regDataRd;
-        UINT32  m_regDataWr;
+        UINT32  m_regDataRead;
+        UINT32  m_regDataWrite;
 };
 
 #endif
