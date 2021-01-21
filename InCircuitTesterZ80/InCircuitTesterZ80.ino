@@ -28,8 +28,7 @@
 
 #include <main.h>
 
-//#include <Z80GameSelector.h>
-#include <Z80GameSelectorLaserdisc.h>
+#include <Z80GameSelector.h>
 
 void setup()
 {
@@ -40,3 +39,4 @@ void loop()
 {
   mainLoop();
 }
+
