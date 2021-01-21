@@ -26,6 +26,7 @@
 #define CDragonsLairBaseGame_h
 
 #include "CGame.h"
+#include "CAY38910.h"
 
 class CDragonsLairBaseGame : public CGame
 {
@@ -39,27 +40,37 @@ class CDragonsLairBaseGame : public CGame
                                       );
         
         //
-        // Custom function to clear the video display to blank.
+        // Custom functions to read DIP switch banks via sound chip
         //
-        static PERROR clearVideo(
+        static PERROR readSW1(
+                                 void *context
+                                 );
+        
+        static PERROR readSW2(
                                  void *context
                                  );
         
         //
-        // Custom function for testing the shell/missile hardware.
+        // Custom function for testing the LED scoreboard
         //
-        static PERROR shellMissileTest(
+        static PERROR scoreboardTest(
                                        void *context
                                        );
         
     protected:
         
         CDragonsLairBaseGame(
+                             const ROM_DATA2N *romData2n,
                              const ROM_REGION *romRegion
                              );
         
         ~CDragonsLairBaseGame(
                               );
+
+        PERROR readSwitches(
+                            CAY38910::Port portNum
+                            );
+        CAY38910  *m_ay;
         
 };
 
