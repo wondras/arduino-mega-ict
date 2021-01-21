@@ -26,6 +26,7 @@
 #include <CBuckRogersGame.h>
 #include <CCrazyKongGame.h>
 #include <CDambustersGame.h>
+#include <CDragonsLairGame.h>
 #include <CFitterGame.h>
 #include <CGalaxianGame.h>
 #include <CGyrussSoundGame.h>
@@ -38,6 +39,7 @@
 #include <CRallyXGame.h>
 #include <CScrambleGame.h>
 #include <CScrambleSoundGame.h>
+#include <CSpaceAceGame.h>
 #include <CSuperCobraGame.h>
 #include <CSuperCobraSoundGame.h>
 #include <CZaxxonGame.h>
@@ -56,6 +58,14 @@ static const SELECTOR s_gameSelector[] PROGMEM = {//0123456789abcde
                                                   {"Crazy K. P2( 1)",  onSelectGame,    (void*) (CCrazyKongGame::createInstancePt2Set1),             false},
                                                   {"Crazy K. P2(Z1)",  onSelectGame,    (void*) (CCrazyKongGame::createInstancePt2ZacSet1),          false},
                                                   {"Dambusters(UK1)",  onSelectGame,    (void*) (CDambustersGame::createInstanceUKSet1),             false},
+//                                                  {"Dragons Lair A ",  onSelectGame,    (void*) (CDragonsLairGame::createInstanceSetA),                false},
+//                                                  {"Dragons Lair B ",  onSelectGame,    (void*) (CDragonsLairGame::createInstanceSetB),             false},
+//                                                  {"Dragons Lair C ",  onSelectGame,    (void*) (CDragonsLairGame::createInstanceSetC),             false},
+//                                                  {"Dragons Lair D ",  onSelectGame,    (void*) (CDragonsLairGame::createInstanceSetD),             false},
+//                                                  {"Dragons Lair E ",  onSelectGame,    (void*) (CDragonsLairGame::createInstanceSetE),             false},
+                                                  {"Dragons Lair F ",  onSelectGame,    (void*) (CDragonsLairGame::createInstanceSetF),             false},
+                                                  {"Dragons Lair F2",  onSelectGame,    (void*) (CDragonsLairGame::createInstanceSetF2),            false},
+                                                  {"DrgnsLair DLE21",  onSelectGame,    (void*) (CDragonsLairGame::createInstanceSetDLE21),         false},
                                                   {"Fitter    (KD1)",  onSelectGame,    (void*) (CFitterGame::createInstanceKagaDenshiSet1),         false},
                                                   {"Fitter     (T1)",  onSelectGame,    (void*) (CFitterGame::createInstanceTaitoSet1),              false},
                                                   {"Galaxian   (M1)",  onSelectGame,    (void*) (CGalaxianGame::createInstanceSet1),                 false},
@@ -75,6 +85,10 @@ static const SELECTOR s_gameSelector[] PROGMEM = {//0123456789abcde
                                                   {"Scramble  S(S1)",  onSelectGame,    (void*) (CScrambleSoundGame::createInstanceSet1),            false},
                                                   {"Scramble   (Z1)",  onSelectGame,    (void*) (CScrambleGame::createInstanceZacSet1),              false},
                                                   {"Scramble  S(Z1)",  onSelectGame,    (void*) (CScrambleSoundGame::createInstanceZacSet1),         false},
+                                                  {"Space Ace A    ",  onSelectGame,    (void*) (CSpaceAceGame::createInstanceSetA),                false},
+                                                  {"Space Ace A2   ",  onSelectGame,    (void*) (CSpaceAceGame::createInstanceSetA2),               false},
+                                                  {"Space Ace A3   ",  onSelectGame,    (void*) (CSpaceAceGame::createInstanceSetA3),               false},
+                                                  {"Space Ace SAE10",  onSelectGame,    (void*) (CSpaceAceGame::createInstanceSetSAE10),            false},
                                                   {"S. Cobra   (K1)",  onSelectGame,    (void*) (CSuperCobraGame::createInstanceKonamiSet1),         false},
                                                   {"S. Cobra   (S1)",  onSelectGame,    (void*) (CSuperCobraGame::createInstanceSternSet1),          false},
                                                   {"S. Cobra  S(S1)",  onSelectGame,    (void*) (CSuperCobraSoundGame::createInstanceSternSet1),     false},

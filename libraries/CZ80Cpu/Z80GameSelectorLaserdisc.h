@@ -32,17 +32,17 @@
 //
 static const SELECTOR s_gameSelector[] PROGMEM = {
     //0123456789abcde
-    {"DrgnsLair A    ",  onSelectGame,    (void*) (CDragonsLairGame::createInstanceSetA),     false},
-    {"DrgnsLair B    ",  onSelectGame,    (void*) (CDragonsLairGame::createInstanceSetB),     false},
-    {"DrgnsLair C    ",  onSelectGame,    (void*) (CDragonsLairGame::createInstanceSetC),     false},
-    {"DrgnsLair D    ",  onSelectGame,    (void*) (CDragonsLairGame::createInstanceSetD),     false},
-    {"DrgnsLair E    ",  onSelectGame,    (void*) (CDragonsLairGame::createInstanceSetE),     false},
-    {"DrgnsLair F    ",  onSelectGame,    (void*) (CDragonsLairGame::createInstanceSetF),     false},
+//    {"DrgnsLair A    ",  onSelectGame,    (void*) (CDragonsLairGame::createInstanceSetA),     false},
+//    {"DrgnsLair B    ",  onSelectGame,    (void*) (CDragonsLairGame::createInstanceSetB),     false},
+//    {"DrgnsLair C    ",  onSelectGame,    (void*) (CDragonsLairGame::createInstanceSetC),     false},
+//    {"DrgnsLair D    ",  onSelectGame,    (void*) (CDragonsLairGame::createInstanceSetD),     false},
+//    {"DrgnsLair E    ",  onSelectGame,    (void*) (CDragonsLairGame::createInstanceSetE),     false},
+//    {"DrgnsLair F    ",  onSelectGame,    (void*) (CDragonsLairGame::createInstanceSetF),     false},
     {"DrgnsLair F2   ",  onSelectGame,    (void*) (CDragonsLairGame::createInstanceSetF2),    false},
-    {"DrgnsLair DLE21",  onSelectGame,    (void*) (CDragonsLairGame::createInstanceSetDLE21), false},
-    {"Space Ace A    ",  onSelectGame,    (void*) (CSpaceAceGame::createInstanceSetA),        false},
-    {"Space Ace A2   ",  onSelectGame,    (void*) (CSpaceAceGame::createInstanceSetA2),       false},
+//    {"DrgnsLair DLE21",  onSelectGame,    (void*) (CDragonsLairGame::createInstanceSetDLE21), false},
+//    {"Space Ace A    ",  onSelectGame,    (void*) (CSpaceAceGame::createInstanceSetA),        false},
+//    {"Space Ace A2   ",  onSelectGame,    (void*) (CSpaceAceGame::createInstanceSetA2),       false},
     {"Space Ace A3   ",  onSelectGame,    (void*) (CSpaceAceGame::createInstanceSetA3),       false},
-    {"Space Ace SAE10",  onSelectGame,    (void*) (CSpaceAceGame::createInstanceSetSAE10),    false},
+//    {"Space Ace SAE10",  onSelectGame,    (void*) (CSpaceAceGame::createInstanceSetSAE10),    false},
     { 0, 0 } // end of list
 };
